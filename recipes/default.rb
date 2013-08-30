@@ -17,6 +17,17 @@
 # limitations under the License.
 
 
+## Update packages
+include_recipe "apt::default"
+
+
+## Language packs
+package "language-pack-en-base"
+
+
+## Locale
+include_recipe "locale"
+
 
 ## User
 user_account 'deploy' do
@@ -30,14 +41,6 @@ directory "/var/apps" do
      mode 00644
      action :create
 end
-
-
-##  Language packs
-package "language-pack-en-base"
-
-
-## Locale
-include_recipe "locale"
 
 
 ## Postgres

@@ -38,7 +38,7 @@ end
 directory "/var/apps" do
      owner "deploy"
      group "deploy"
-     mode 00644
+  mode 00744
      action :create
 end
 

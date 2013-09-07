@@ -30,7 +30,11 @@ include_recipe "locale"
 
 
 ## User
-user_account 'deploy' do
+node[:users].each do |user, user_data|
+  user_account user do
+    password user_data[:password]
+    ssh_keys user_data[:ssh_keys]
+  end
 end
 
 

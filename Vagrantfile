@@ -75,6 +75,12 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision :chef_solo do |chef|
     chef.json = {
+      users: {
+        deploy: {
+          password: '$6$Jz61tUIPAEBc4R69$.77ruWIRf36yQ9ySPL2qObbu54jduoCCMUDb.28khUr95YYnuj5AKhslLnGAqSPBEolHC5MNm0yAExSoC6FKy.',  # mkpasswd -m sha-512 deploy
+          ssh_keys: []
+        }
+      },
       locale: {
         lang: 'en_NZ.utf8'
       },

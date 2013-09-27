@@ -86,6 +86,5 @@ TODO
 TODO
 
 ## Author
-TODO
+<a href='https://github.com/rossjourdain/' target='_blank'>Ross Jourdain</a>
 
-Author:: Ross Jourdain

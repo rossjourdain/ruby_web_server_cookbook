@@ -6,6 +6,15 @@ This cookbook is designed to make setting up a Ruby web server on a VPS quite si
 
 I recommend using [Digital Ocean](https://www.digitalocean.com/).  
 
+The cookbook will install the following stack:
+* Ruby 2.0 
+* rbenv
+* PostgreSQL
+* Apache2
+* Phusion Passenger
+* Node.js
+* ImageMagick
+
 
 ### Setup
 

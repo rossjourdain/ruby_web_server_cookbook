@@ -4,7 +4,7 @@
 ## VPS Provisioning
 This cookbook is designed to make setting up a Ruby web server on a VPS quite simple.  
 
-I recommend using [Digital Ocean](https://www.digitalocean.com/).  
+I recommend using <a href='https://www.digitalocean.com/' target='_blank'>Digital Ocean</a>.  
 
 The cookbook will install the following stack:
 * Ruby 2.0 

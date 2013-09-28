@@ -77,6 +77,8 @@ knife solo prepare <user>@<server>
 #### Setup the server config 
 ````
 ## ./nodes/<server>.json
+## NB: password generated using: mkpasswd -m sha-512 deploy
+
 {
   "run_list": [
     "ruby_web_server"

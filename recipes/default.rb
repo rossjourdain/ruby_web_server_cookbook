@@ -66,8 +66,18 @@ rbenv_gem "bundler" do
 end
 
 
-## Apache + Passenger
+## Apache + Passenger + Rails
+include_recipe "rails"
 include_recipe "passenger_apache2"
+
+node[:webapps].each do |webapp, webapp_data|
+  web_app webapp do
+    docroot "/var/apps/#{webapp}"
+    server_name "#{webapp}.#{webapp_data[:domain]}"
+    server_aliases [webapp, node[:hostname]]
+    rails_env webapp_data[:rails_env]
+  end
+end
 
 
 ## Nodejs

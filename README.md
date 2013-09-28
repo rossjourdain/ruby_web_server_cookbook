@@ -83,9 +83,15 @@ knife solo prepare <user>@<server>
   ],
   "users": {
     "deploy": {
-      password: '$6$Jz61tUIPAEBc4R69$.77ruWIRf36yQ9ySPL2qObbu54jduoCCMUDb.28khUr95YYnuj5AKhslLnGAqSPBEolHC5MNm0yAExSoC6FKy.',  # mkpasswd -m sha-512 deploy
-      ssh_keys: [''],
-    },
+      "password": "$6$Jz61tUIPAEBc4R69$.77ruWIRf36yQ9ySPL2qObbu54jduoCCMUDb.28khUr95YYnuj5AKhslLnGAqSPBEolHC5MNm0yAExSoC6FKy.",
+      "ssh_keys": [""]
+    }
+  },
+  "webapps": {
+    "test_app": {
+      "domain": "www.example.com",
+      "rails_env": "production"
+    }
   },
   "locale": {
     "lang": "en_NZ.utf8"

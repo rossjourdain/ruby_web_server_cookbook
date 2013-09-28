@@ -46,6 +46,44 @@ directory "/var/apps" do
      action :create
 end
 
+## Webapp directories
+node[:webapps].each do |webapp, webapp_data|
+  directory "/var/apps/#{webapp}" do
+    owner "deploy"
+    group "deploy"
+    mode 00744
+    action :create
+  end
+
+  directory "/var/apps/#{webapp}/releases" do
+    owner "deploy"
+    group "deploy"
+    mode 00744
+    action :create
+  end
+
+  directory "/var/apps/#{webapp}/releases/initial" do
+    owner "deploy"
+    group "deploy"
+    mode 00744
+    action :create
+  end
+
+  directory "/var/apps/#{webapp}/releases/initial/public" do
+    owner "deploy"
+    group "deploy"
+    mode 00744
+    action :create
+  end
+
+  link "/var/apps/#{webapp}/current" do
+    to "/var/apps/#{webapp}/releases/initial"
+    owner "deploy"
+    group "deploy"
+    action :create
+  end
+end
+
 
 ## Postgres
 include_recipe "postgresql::server"
@@ -72,7 +110,7 @@ include_recipe "passenger_apache2"
 
 node[:webapps].each do |webapp, webapp_data|
   web_app webapp do
-    docroot "/var/apps/#{webapp}"
+    docroot "/var/apps/#{webapp}/current/public"
     server_name "#{webapp}.#{webapp_data[:domain]}"
     server_aliases [webapp, node[:hostname]]
     rails_env webapp_data[:rails_env]

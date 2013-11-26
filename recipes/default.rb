@@ -40,10 +40,10 @@ end
 
 ## Application Directory
 directory "/var/apps" do
-     owner "deploy"
-     group "deploy"
+  owner "deploy"
+  group "deploy"
   mode 00744
-     action :create
+  action :create
 end
 
 ## Webapp directories

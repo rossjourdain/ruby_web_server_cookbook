@@ -104,8 +104,7 @@ rbenv_gem "bundler" do
 end
 
 
-## Apache + Passenger + Rails
-include_recipe "rails"
+## Apache + Passenger
 include_recipe "passenger_apache2"
 
 node[:webapps].each do |webapp, webapp_data|
